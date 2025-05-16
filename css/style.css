@@ -1,0 +1,454 @@
+@charset "utf-8";
+
+body{
+  font-family: "Kaisei Decol", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+img{
+    width: 100%;
+    height: auto;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.phone-img{
+  display: block;
+}
+.pc-img{
+  display: none;
+}
+
+
+.menu_ribon{
+  display: none;
+}
+.hamburger-menu{
+  display: block;
+  background-color: #C7A8A5;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  position: fixed;
+  top: 6px;
+  left: 8px;
+  z-index: 100;
+}
+#menu__toggle {
+    opacity: 0;
+  }
+  #menu__toggle:checked + .menu__btn > span {
+    transform: rotate(45deg);
+  }
+  #menu__toggle:checked + .menu__btn > span::before {
+    top: 0;
+    transform: rotate(0deg);
+  }
+  #menu__toggle:checked + .menu__btn > span::after {
+    top: 0;
+    transform: rotate(90deg);
+  }
+  #menu__toggle:checked ~ .menu__box {
+    left: 0 !important;
+  }
+  .menu__btn {
+    position: fixed;
+    top: 30px;
+    left: 20px;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    z-index: 1;
+  }
+  .menu__btn > span,
+  .menu__btn > span::before,
+  .menu__btn > span::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #7C696C;
+    transition-duration: .25s;
+  }
+  .menu__btn > span::before {
+    content: '';
+    top: -8px;
+  }
+  .menu__btn > span::after {
+    content: '';
+    top: 8px;
+  }
+  .menu__box {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 300px;
+    height: 100%;
+    margin: 0;
+    padding: 80px 0;
+    list-style: none;
+    background-color: #C7A8A5;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
+    transition-duration: .25s;
+  }
+  .menu__item {
+    display: block;
+    padding: 12px 24px;
+    color: #31130D;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    transition-duration: .25s;
+  }
+  .menu__item:hover {
+    background-color: #EFDCEA;
+  }
+
+  @media (min-width: 768px) { 
+    .phone-img{
+      display: none;
+    }
+    .pc-img{
+      display: block;
+    }
+
+    .hamburger-menu{
+      display: none;
+    }
+    .menu_ribon{
+      display: block;
+      background-color: #C7A8A5;
+      position: fixed;
+      width: 100%;
+      z-index: 100;
+      border-bottom:2px solid#7C696C;;
+    }
+    .menu_ribon ul{
+      display: flex;
+      justify-content: center;
+    }
+    .menu_ribon ul li{
+      margin: 0 10px;
+    }
+    .menu_item{
+      display: block;
+      padding: 12px 24px;
+      overflow: hidden;
+      color: transparent;
+      font-size: 20px;
+      text-shadow: 0 -2.5em 0 #31130D, 0 0 0 #31130D;
+      transition: text-shadow 0.4s cubic-bezier(0.76, 0, 0.24, 1);
+    }
+      .menu_item:hover{
+        text-shadow: 0 0 0 #31130D, 0 2.5em 0 #31130D;
+      }
+    }
+
+    h1 {
+      position: relative;
+      padding: 0 0 100px 0;
+      font-size: 40px;
+      color: #D8809B;
+    }
+    h1:after {
+      content: "";
+      display: block;
+      height: 4px;
+      background: -webkit-linear-gradient(to right, rgb(230, 90, 90), transparent);
+      background: linear-gradient(to right,#D8809B, transparent);
+      width: 300px;
+    }
+    @media (min-width: 768px) { 
+      h1:after {
+        content: "";
+        display: block;
+        height: 4px;
+        background: -webkit-linear-gradient(to right, rgb(230, 90, 90), transparent);
+        background: linear-gradient(to right,#D8809B, transparent);
+        width: 700px;
+      }
+    }
+
+    h2{
+      font-weight: bold;
+      font-size: 30px;
+      position: relative;
+      text-align: center;
+      padding: 30px 0 30px 0;
+    }
+    h2:before{
+      content: url(../images/sakura-icon.png);
+      position: absolute;
+      left: 30px;
+    }
+    h2:after{
+      content: url(../images/sakura-icon.png);
+      position: absolute;
+      right: 30px;
+    }
+
+
+  
+
+
+.scroll-back{
+  height: 300px;
+  background-color: #fff;
+}
+
+.scroll-down_08 {
+  position: relative;
+  left: 41%;
+  top: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  font-family: serif;
+  color: #7C696C;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.wavy-text span {
+  position: relative;
+  display: inline-block;
+  animation: wave 2s infinite;
+  animation-delay: calc(0.1s * var(--i));
+}
+
+.wavy-text_arrow {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  border-left: 1px solid #7C696C;
+  border-bottom: 1px solid #7C696C;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  animation: float 2s infinite;
+}
+
+@keyframes wave {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(-20%) rotate(-45deg);
+  }
+  50% {
+    transform: translateY(20%) rotate(-45deg);
+  }
+}
+
+
+@media (min-width: 768px) { 
+
+  .scroll-back{
+    height: 300px;
+  }
+  .scroll-down_08 {
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-family: serif;
+    color: #7C696C;
+    font-size: 14px;
+    text-decoration: none;
+  }
+
+
+}
+
+.sakura{
+  padding: 15px;
+}
+
+.sakura dt{
+  padding: 20px 0 8px 0;
+  font-size: 20px;
+}
+
+.point {
+  position: relative;
+  border-top: solid 2px #D8809B;
+  border-bottom: solid 2px #D8809B;
+  background: #f4f4f4;
+  line-height: 1.4;
+  padding: 0.5em;
+  margin: 2em 0 5.5em;
+}
+
+.point:after {
+  /*タブ*/
+  position: absolute;
+  font-family: "Font Awesome 5 Free",'Quicksand','Avenir','Arial',sans-serif;
+  font-weight: 900;
+  content: '\f0a7\ POINT';
+  background: #D8809B;
+  color: #fff;
+  left: 0px;
+  bottom: 100%;
+  border-radius: 5px 5px 0 0;
+  padding: 5px 7px 3px;
+  font-size: 0.7em;
+  line-height: 1;
+  letter-spacing: 0.05em;
+}
+
+@media (min-width: 768px) { 
+.sakura{
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.sakura dl{
+  width: 35%;
+  margin: 0 auto;
+}
+
+.sakura dt{
+  padding: 30px 0 10px 0;
+}
+
+.sakura dd{
+  padding-bottom: 10px;
+}
+
+.point{
+  position: relative;
+  border-top: solid 2px #D8809B;
+  border-bottom: solid 2px #D8809B;
+  background: #f4f4f4;
+  line-height: 1.4;
+  padding: 0.5em;
+  margin: 2em 0 9em;
+}
+}
+
+footer{
+  background-color: #C7A8A5;
+  height: 500px;
+  text-align: center;
+  border-top: 2px solid #7C696C;
+}
+
+.footer{
+  position: relative;
+}
+.small{
+  font-size: small;
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+}
+.footer-img{
+  width: 100px;
+  position:absolute;
+  right: 5px;
+  top: 15px;
+}
+.footer-img2{
+  width: 100px;
+  position:absolute;
+  transform: scale(-1, 1);
+  left: 5px;
+  top: 15px;
+}
+@media (min-width: 768px) { 
+  .footer-img{
+    width: 120px;
+    position:absolute;
+    right: 50px;
+  }
+  .footer-img2{
+    width: 120px;
+    position:absolute;
+    transform: scale(-1, 1);
+    left: 50px;
+  }
+}
+
+.wrap {
+  display: flex;
+  align-items: center;
+  height: 300px;
+  overflow: hidden;
+  margin-top: 125px;
+}
+.slideshow {
+  display: flex;
+}
+.content {
+  width: 300px;
+  height: 230px;
+  margin: 0 10px;
+}
+.content:nth-child(1) {
+  background-image: url(../images/hyogo-himejijou.jpg);
+  background-repeat: no-repeat;
+}
+.content:nth-child(2) {
+  background-image: url(../images/kyoto-arasiyama.jpg);
+  background-repeat: no-repeat;
+}
+.content:nth-child(3) {
+  background-image: url(../images/hyogo-sumaura.jpg);
+  background-repeat: no-repeat;
+}
+.content:nth-child(4) {
+  background-image: url(../images/oosaka-utiage.png);
+  background-repeat: no-repeat;
+}
+.slideshow {
+  display: flex;
+  animation: loop-slide 20s infinite linear 1s both;
+}
+@keyframes loop-slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+#page-top {
+  position: fixed;
+  right: 5px;
+  bottom: 20px;
+  height: 50px;
+  font-weight: bold;
+  transform: rotate(90deg);
+  font-size: 90%;
+  line-height: 1.5rem;
+  color: #7C696C;
+  padding: 0 0 0 35px;
+  border-top: solid 1px;
+}
+#page-top::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -1px;
+  left: 0px;
+  width: 15px;
+  border-top: solid 1px;
+  transform: rotate(35deg);
+  transform-origin: left top;
+}
